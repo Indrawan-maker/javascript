@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+// 1.properti didalam constructor function
+// 2. constructor didalam function 
+
+
+function Person(firstName, lastName){
+    this.firstName = firstName
+    this.lastName = lastName
+
+    // tambahkan function seperti biasa
+    this.sayHello = function (name) {
+        console.info(`Hello ${name}, my name is ${this.firstName} my last name is ${this.lastName}`)
+    }
+    // tambahkan method seperti biasa
+    // metode : digunakaan untuk melakukan operasi tertentu pd objek 
+    this.fungsi = function (first, second) {
+        return
+    }
+}
+
+// create new akan following Person di atas
+
+const eko = new Person("Eko", "khennedy ")
+eko.sayHello("Joko")
+
+//lalu ita isi lah di bawah person ini 
+//dengan cara nama variable kita di ikutin object di person
+
+const budi = new Person("Budi", "Nugraha")
+budi.sayHello("Joko")
+
+console.log(eko)
+console.log(budi)
+
+
+    </script>
+</body>
+</html>

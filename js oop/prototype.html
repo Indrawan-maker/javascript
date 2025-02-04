@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+    <script>
+
+// setiap kita bikin instructor function itu 
+// otomatis dibuatkan prototypenya
+function Person(firstName, lastName){
+    this.firstName = firstName
+    this.lastName = lastName
+    this.sayHello = function (name) {
+        console.info(`Hello ${name}, my name is ${this.firstName} my last name is ${this.lastName}`)
+    
+    }
+}
+
+// eko dan budi itu namanya object instance dari sebuah constructor function 
+// jadi instance otomatis mewarisi prototype instuctr fntion person
+const eko = new Person("Eko", "khennedy ")
+const budi = new Person("Budi", "Nugraha")
+
+console.log(eko)
+console.log(budi)
+
+    </script>
+</body>
+</html>

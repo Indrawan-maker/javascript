@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>error</title>
+</head>
+<body>
+    <script>
+
+        class MathUtil {
+            static sum(...numbers){
+
+                if(numbers.length === 0){
+                    //akan ditulis seperti saat terjadi error
+                    throw new Error("Total parameter harus lebih dari 0")
+                }
+                let total = 0
+                for (const number of numbers){
+                    total += number
+                }
+                return total
+            }
+        }
+            // program selanjutnya tidak akan di eksekusi
+        console.info(MathUtil.sum())
+        console.info("eko")
+const result = MathUtil.sum(1,1,1,1,1,)
+console.info(result)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor Inheriten</title>
+</head>
+<body>
+    <script>
+//kita bisa melakukan pemanggilan constructor lain dengan cara
+// NamaContructor.call(this(ini mengatakan bahwa saya akan membawa objek yg akan gunakan),
+// parameter(parameter yg ingin dipanggil itu apa saja)
+// NGECOPY APA YANG DILAKUKAN OLEH CONSTRUCTOR LAIN
+// caranya: nama.call(this, param)
+// 
+
+    function Employee(firstName) {
+        this.firstName = firstName
+        this.sayHello = function (name){
+            console.info(`Hello ${name}, my name is ${this.firstName}`)
+        }
+    }
+
+    function Manager(firstName, lastName){
+        this.lastName = lastName
+        Employee.call(this, firstName)
+    }
+
+    const budi = new Employee("Budi")
+    console.info(budi)
+
+    const eko = new Manager("Eko", "Khennedy")
+    console.info(eko)
+    </script>
+</body>
+</html>
