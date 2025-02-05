@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAP</title>
+</head>
+<body>
+    <script>
+
+        // MAP
+
+        // map mereprensentasi dari struktur data key dan value
+        // map mirip dengan object, namun di map, semua method
+        // untuk manipulasi data sudah disediakan
+        // map mengikuti kontrak iterable,
+        //  sehingga bisa di iterasi secara default
+
+        const map = new Map()
+        map.set("Name", "Eko Kurniawan")
+        map.set("Addres", "Indonesia")
+
+        console.info(map)
+        console.info(map.get("Name"))
+        console.info(map.get("Addres"))
+        console.info(map.get("Hobby"))
+
+        map.forEach((value, key) => console.info (`${key} : ${value}`))
+
+
+
+    </script>
+</body>
+</html>

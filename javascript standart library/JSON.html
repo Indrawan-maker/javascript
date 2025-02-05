@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <script>
+
+
+        // JSON = JavaSript Object Notation
+        // mirip js Object
+        // banyak digunakan untuk komunikasi antara
+        // Server dan Client / apliaksi  yang berbasis client dan server
+        
+
+        // kali ini saya akan belajar cara konversi JSON 
+
+        const person = {
+            firstName: "Eko",
+            middleName: "Kurniawan",
+            lastName: "Khennedy",
+            address: {
+                country: "Indonesia",
+                city: "Subang"
+            },
+            hobbies: [
+                "Coding", "Game", "Traveling"
+            ]
+        }
+
+            // ini mengubah obejck menjadi string
+            // biasa di gunakan untuk mengirim data ke server dlm format json
+        const json = JSON.stringify(person)
+        console.info(json)
+        // bisa juga jadi array
+        // const json = JSON.stringify([person])
+        // console.info(json)
+
+        // ini untuk mengonversi string JSON menjadi objek js
+        const jsonObject = JSON.parse(json)
+        console.info(jsonObject)
+        // digunakan  saat menerima data json dari server melalui ajax
+        // local storage
+        // saat bekerja dengan API yang mengembalikan data dalam format JSON
+
+
+    </script>
+</body>
+</html>

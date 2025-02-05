@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASE 64</title>
+</head>
+<body>
+    <script>
+
+        // BASE64
+
+        // represntasi data dari binary data ke
+        // dalam format string
+        // merupakan format text data yg aman 
+        // dikirimkan di web
+        // digunakan ketika perlu mengirim data
+        //dari client ke server
+
+
+        // btoa
+        {
+            const original = "Eko&Kurniawan=Khannedy"
+            console.info(original)
+
+            const encode = btoa(original)
+            console.info(encode)
+
+            const decode = atob(encode)
+            console.info(decode)
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

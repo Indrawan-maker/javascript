@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENCODE</title>
+</head>
+<body>
+    <script>
+
+        // ENCODE URI dan DECODE URI
+
+        // encode berguna agar tidak 
+        // terjadi masalah saat kita 
+        // mengirim data ke server
+
+        // encode 
+        // dari value asli menjadi yg kita sudah lakukan encode
+        // decode
+        // dari hasil encodenya di balikkan kembali
+{
+        const url = "http://contoh.com/?name=Eko&Kurniawan=Khennedy"
+        console.info(url)
+        const encode = encodeURI(url)
+        console.info(encode)
+
+        const decode = decodeURI(encode)
+        console.info(decode)
+}
+        // ENCODE URI COMPONENT dan DECODE URI COMPONENT 
+        {
+        const value = "Eko&Kurniawan=Khennedy"
+        const url = "http://contoh.com/?name="
+        console.info(url + value)
+        // ini akan mengencode semuanya
+        const encode = encodeURIComponent(value)
+        console.info(url + encode)
+
+        const decode = decodeURIComponent(value)
+        console.info(url + decode)
+}
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROXY</title>
+</head>
+<body>
+    <script>
+
+
+        // PROXY 
+
+        // wakil dari sebuah data
+        // dia seperti menjadi orang tengah
+        // jadi harus melewati proxy dulu
+        // inarat juga seperti ingin emngobrol 
+        // denga orang aslinya harus
+        //  melewtin proxy ini terlebih dahulu
+        // dengan ini kita bisa memodifikasi
+        //  sebelum dat dikirm
+
+        // PROXY HANDLER
+
+        // sebelum membuat proxy kita membuat handler terlebih dahulu
+        // didalam handler kita bisa membuat function interceptor
+        // function interceptor adalah function yang selalu di panggil ketika 
+        // data ingn di akses
+        // yg digunakan ketika mengambil data atau mengubah data ke target
+
+        // unutk membuat proxy kita menggunakan 
+        // new Proxy(target, handler)
+
+            // MEMBUAT TARGET HANDLER
+        {
+            const target = {
+                middleName: "Kurniawan"
+            }
+
+                // membuat function interceptor
+            const handler = {
+                get: function (target, property){
+                    // jka ingin memodifikasi silahkan
+                    // Jika hanya ingin memperbolehkan data berikut caranya
+                    console.info(`Acess Property : ${property}`)
+                    return target[property]
+
+                },
+                set: function (target, property, value){
+                    console.info(`Change or Add Property, ${property} : ${value}`)
+                    if(value == null){
+                        throw new Error("Tidak Boleh Null")
+                    } else {
+                        target[property] = value
+                    }
+
+                }
+            }
+            
+            const proxy = new Proxy(target, handler)
+            // jika ingin menambah atau merubah data bukan ke target
+            // melalui proxy
+            // jika ke target kita jadi tidak bisa mengguankan handler
+            // ini kita ngubah bearti dia ke set
+            proxy.firstName = "Eko"
+            proxy.lastName = null
+
+            // saat mengubah melalui proxy seperti ini
+            // data otomatis akan terkirim ke handler
+            // artinya jika ingin melakuka nsesuatu sebelum dan sesudah data dikirim 
+            // bisa dilakukan di handler
+            // ini kita manggil berarti dia ke get 
+            console.info(proxy.firstName)
+            console.info(proxy.middleName)
+            console.info(proxy.lastName)
+            console.info(proxy)
+            console.info(target)
+            
+        }
+
+
+    </script>
+</body>
+</html>

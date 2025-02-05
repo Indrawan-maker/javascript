@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+
+
+        // static method pada Object
+
+        // Object FREEZE dan SEAL
+
+    {
+        const person  = {
+
+            firstName: "Eko",
+            lastName: "Kurniawan"
+
+        }
+
+        // freeze membuat object tidak bisa dirubah dan dihapus
+        Object.freeze(person)
+
+        person.firstName = "Budi"
+        person.middleName = "kurniawanooooo"
+        delete person.lastName
+
+        console.info(person)
+    }
+    
+
+    // SEAL
+    {
+        const person  = {
+
+firstName: "Eko",
+lastName: "Kurniawan"
+
+}
+
+// seal membuat isi object tidak bisa dihapus tetapi masih bisa dirubah
+// dan tidak bisa ditambahkan data baru
+Object.seal(person)
+person.firstName = "Budi"
+person.middleName = "Kurniawannoooo"
+delete person.lastName
+
+console.info(person)
+    }
+
+
+    // Object Assign
+
+    {
+        
+        const target = {
+            firstName: "Eko"
+        }
+        const source = {
+            firstName: "Budi",
+            lastName: "Khennedy"
+        }
+
+        // parameter target artinya dia akan di copy kesana
+        // source artinya apa yang ingin kamu copy
+        // kalau ada yang sama dari source di target maka dia akan
+        // tergantikan atau ditimpa
+        Object.assign(target, source)
+        console.info(target)
+        console.info(source)
+    }
+
+    // Oobject property name & value
+{
+    const person = {
+        firstNmae: "Eko",
+        lastName: "Khennedy"
+    }
+
+    // gunakan ini jika ingin mengeluarkan value dari properti
+    console.info(Object.values(person))
+    // gunakan ini jika ingn mengoutputkan property
+    console.info(Object.getOwnPropertyNames(person))
+}
+
+    </script>
+</body>
+</html>

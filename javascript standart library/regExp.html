@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>REGULAR EXPRESSION</title>
+</head>
+<body>
+    <script>
+
+        // REGULAR EXPRESSION
+
+        // fitur untuk mencari text dengan pola yang kita tentukan 
+        // 
+
+
+        // cara membuatnya ada 3 cara 
+    { 
+        const regex1 = /[eko]/
+        const regex2 = new RegExp("eko")
+        const regex3 = new RegExp(/[eko]/)
+}
+
+
+    // test regex
+
+    {
+        const name = "Eko kurniawan Eko khennedy"
+        const regex = new RegExp("eko")
+
+        const result = regex.exec(name)
+        console.info(result)
+        console.info(regex.exec("ga ada"))
+
+        const result2 = regex.test(name)
+        console.info(result2)
+        console.info(regex.test("ga ada"))
+    }
+
+
+        // REGEX MODIFIER
+
+
+{
+    const name = "eko kurniawan \neKo khannedy\nEdo Kurniawan"
+    const regex1 = /^e.o/igm
+    // artinya dicari global
+    const regex2 = /Kurniawan/ig
+    // ga peduli huruf besar kecil dan global juga
+    
+    let result
+    while((result = regex1.exec(name)) !== null){
+        console.info(result)
+    }
+    while((result = regex2.exec(name) !== null)){
+        console.info(result)
+    }
+}
+
+    // advance regex
+
+    {
+        const regex = /ek[aiueo]/ig
+
+        const name = "eko eki eku eka eke edo eki"
+        let result
+    while((result = regex.exec(name)) !== null){
+        console.info(result)
+    }
+    }
+
+    {
+        const name = "eko eki eku eka eke edo eki"
+
+        console.info(name.match(/ek[aiueo]/ig))
+        // akan mendata semua yg berkaitan
+        console.info(name.search(/ek[aiueo]/ig))
+        // mencari index yg pertama didapat 
+        console.info(name.replace(/ek[aiueo]/ig, "kamu"))
+        // karna menggunakan global maka diaakana mereplace semuanya
+        console.info(name.split(/k/ig))
+        // jadi hilang jika menyebutkan didalam splitnya
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYMBOL</title>
+</head>
+<body>
+    <script>
+
+        // SYMBOL
+        
+
+        // memastikan bahwa key yang di buat itu berbeda meskipun 
+        // naamnya sama
+        {
+        const firstName = Symbol("firstName")
+        const lastName = Symbol("lastName")
+
+
+        const person = {}
+
+        person[firstName] = "Eko"
+        person[lastName] = "Khennedy"
+
+        console.info(person)
+}
+
+    
+// symbol for
+
+    // kita bisa membuat symbol tanpa variable (lebih simple)
+
+    {
+        console.info(Symbol.for("firstName") === Symbol.for("firstName"))
+        const person = {}
+
+        person[Symbol.for("firstName")] = "Eko"
+        person[Symbol.for("lastName")] = "Khennedy"
+
+        console.info(person)
+        console.info(person[Symbol.for("firstName")])
+        console.info(person[Symbol.for("lastName")])
+
+    }
+
+
+
+
+
+
+    </script>
+</body>
+</html>

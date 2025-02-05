@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    
+    <!-- instance method di array -->
+    <script>
+
+        
+        // array loop FOREACH
+        {
+    const array = ["eko", "Kurniawwan", "Khennedy"]
+
+    array.forEach(function(value, index){
+        console.info(`${index} : ${value}`)
+    })
+
+    array.forEach((value, index) => console.info(`${index} : ${value}`))
+
+    array.forEach(value => console.info(value))
+}
+
+    // array queue
+
+    // FIFO first in first out atau seperti antrian
+    // push() unutk menambah data dibelakang dan
+    // shift() untuk megnambil dan menghapus data paling depan
+    {
+        const queue = []
+
+        queue.push("Eko")
+        queue.push("Kurniawan")
+        queue.push("Khennedy")
+// data akan ditambahkan satu persatu 
+        console.info(queue)
+        console.info(queue.shift())
+        console.info(queue.shift())
+        console.info(queue.shift())
+        console.info(queue.shift())
+        console.info(queue)
+        // saat melakaukan shift() data benar benar dihapus dari arraynya
+    }
+
+
+        // Struktur Data Stack / Array Stack
+
+        // ini sama seperti sebelumnya namun beda tempat di ambilnya
+        // LIFO last in first out seperti tumpukan kartu
+        // saat memeasukkan data, data akan di masukkan ke paling atas
+        // menggunakan push()
+        // saat pengambilan data, data akan di ambil dari urutan paling belakang atau atas
+        // menggunakan pop() dan juga dia akan menghapusnya  
+    {
+        const stack = []
+
+        stack.push("Eko")
+        stack.push("Kurniawan")
+        stack.push("Khennedy")
+
+        console.info(stack.pop())
+        console.info(stack.pop())
+        console.info(stack.pop())
+        console.info(stack.pop())
+
+    }
+
+    //  Array search
+    // mencari data di array menggunakan fiturnya
+    {
+        const search = [1,2,3,4,5,1,2,3,4,5]
+        console.info(search.find(value => value > 3))
+        // value disini artinya nilai dari si find
+        // fund() akan mencari data ke 4
+        console.info(search.findIndex(value => value > 3))
+        // sama cuman mulai hitungnya dari index
+        console.info(search.includes(3))
+        // mengetahui nilai dari hal yang disebutkan false tidak ada
+        // true ada
+        console.info(search.indexOf(5))
+        // mengetahui nilai dari index 5
+        console.info(search.lastIndexOf(5))
+        // mencari data dari 5 yang terakhir
+
+    }
+
+    // array filter 
+
+    // akan membuat array baru yang akan include
+    //  dengan kondisi yang ditentukan saja
+
+    {
+        const number = [1,2,3,4,5,6,7,8,9,10]
+    const ganjil = number.filter(value => value % 2 === 1) // bialngan ganjil
+    const genap = number.filter(value => value % 2 === 0) //bilangan genap
+
+    console.info(number)
+    console.info(ganjil)
+    console.info(genap)
+}
+
+    // Array TRANFORM
+
+    // sama seperti array filter dia akan membuat array baru
+
+    {
+        const names = ["Eko", "Kurniawan", "Khennedy"]
+        // gini baca kodenya
+        // map artinya melakukan tranformasi
+        // dari value kita melakukan huruf besar semua
+        // mereka satu satu akan di proses ke uppercase
+        // dan dia akan disimpan ke dalam array baru
+        const namesUpper = names.map(value => value.toUpperCase())
+
+        console.info(names)
+        console.info(namesUpper)
+
+        // Reduce
+        // jadi reduce ini menghitung nilai dari kiri ke kanan 
+        // lalu menjadi satu hasil tunggal
+        const namesReduces = names.reduce((before, value) => before + " " + value )
+        // ini dimulai dari kanan
+        const namesRightReduces = names.reduceRight((before, value) => before + " " + value)
+        console.info(namesReduces)
+        console.info(namesRightReduces)
+
+        // hal ini juga cocok untuk mentotal
+
+        const number = [1,2,3,4,5,6,7,8,9,10]
+
+        const sum  = number.reduce((before, value) => before + value)
+        console.info(sum)
+        const sumRight = number.reduceRight((before, value) => before + value)
+        console.info (sumRight)
+}
+// jadi kita tidak perlu cape cape melakukan transformasi melalkukan perulangan secara manual
+
+
+
+
+
+
+    </script>
+</body>
+</html>

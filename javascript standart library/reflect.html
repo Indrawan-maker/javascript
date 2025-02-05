@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REFLECT</title>
+</head>
+<body>
+    <script>
+
+        // REFLECT
+
+        // Kelas yang digunakan untuk Mengeksekusi Javascript
+        // mengecek isi dari sebuah object atau bahkan 
+        // memanggil function didalam objectnya tanpa 
+        // harus menyentuh obejctnya
+
+        const person = {}
+
+        Reflect.set(person, "firstName", "Eko")
+        Reflect.set(person, "lastName", "Khannedy")
+
+        console.info(person)
+
+        console.info(Reflect.get(person, "firstName"))
+        console.info(Reflect.get(person, "lastName"))
+
+        console.info(Reflect.has(person, "firstName"))
+        console.info(Reflect.has(person, "middleName"))
+        console.info(Reflect.has(person, "lastName"))
+
+
+    </script>
+</body>
+</html>

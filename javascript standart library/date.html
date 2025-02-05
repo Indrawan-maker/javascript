@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+</head>
+<body>
+    <script>
+
+
+        // DATE
+
+        // untuk mereprenstasi waktu dan tanggal
+{
+        const date1 = new Date()
+        console.info(date1)
+
+        const date2 = new Date(2020, 10, 10)
+        console.info(date2)
+
+        const date3 = new Date(2020, 10, 10, 24, 60, 60, 120)
+        console.info(date3)
+
+        // menggunakan Epoch & unix timestamp dari web milisecond
+        // merupakan hitugan milisecond dari januari 1970
+        const date4 = new Date(1738559228246)
+        console.info(date4)
+    }
+
+    // epoch dan unix timestamp
+    {
+        const date1 = new Date()
+        console.info(date1.getTime())
+        // menggunakan getTime() akan langsung mendapatkan epox 
+        // timestampnya
+
+        const date2 = new Date(2020, 10, 10)
+        console.info(date2.getTime())
+
+        const date3 = new Date(2020, 10, 10, 24, 60, 60, 120)
+        console.info(date3.getTime())
+
+        
+        const date4 = new Date(1738559228246)
+        console.info(date4.getTime())
+
+
+        console.info(Date.now())
+        // menunjukan timestamp saat ini
+        // now() number epox timestamp tadi
+    }
+
+    // DATE PARSING
+    {
+        const time = Date.parse("2005-10-10T08:45:45.123+07:00")
+        // di current millis dia jam 01:00 jadi bener + 07:00
+        // hasilnya 08:00
+        console.info(time)
+
+            // lalu kita pindahkan ke date
+        const date = new Date(time)
+
+        console.info(date)
+    }
+
+    // DATE GET DAN SETTER
+    {
+        const date = new Date()
+        console.info(date.getFullYear())
+
+        console.info(date.getMonth())
+        console.info(date.getDate())
+        console.info(date.getDay())
+        console.info(date.getTime)
+        console.info(date.getHours())
+        console.info(date.getMinutes())
+        console.info(date.getSeconds)
+        console.info(date.getMilliseconds())
+        // kenapa -480?
+        // karena waktu saat ini perlu di tambah 420 mnt
+        // untuk menyamakan zona waktu disana
+        console.info(date.getTimezoneOffset())
+
+    }
+
+
+    </script>
+</body>
+</html>
