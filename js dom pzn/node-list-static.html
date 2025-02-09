@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> static nodelist</title>
+</head>
+<body>
+    <ul id="menu1">
+        <li id="first">first</li>
+        <li id="second">second</li>
+        <li id="third">third</li>
+    </ul>
+
+    <ul id="menu2">
+        <li>Eko</li>
+        <li>Kurniawan</li>
+        <li>Khannedy</li>
+    </ul>
+    <script>
+        //  nodelist static
+        let list = document.querySelectorAll("li")
+
+
+        const menu = document.getElementById("menu1")
+
+        menu.appendChild(document.createElement("li"))
+        menu.appendChild(document.createElement("li"))
+
+        list = document.querySelectorAll("li")
+
+        console.info(list)
+    </script>
+</body>
+</html>

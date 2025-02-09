@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window</title>
+</head>
+<body>
+    <p id="content"></p>
+    <p id="location"></p>
+    <script>
+        const content = document.getElementById("content")
+        const locate = document.getElementById("location")
+        const height = window.screen.height
+        const width = window.screen.width
+        const url = new URL(window.location.href)
+        const urll = window.location
+
+        content.textContent = `height your device is ${height} and
+        your width device is ${width} ${url} ${urll}`
+        locate.textContent = `${url} ${urll}`
+    </script>
+</body>
+</html>

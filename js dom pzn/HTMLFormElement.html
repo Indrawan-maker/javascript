@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html form element</title>
+</head>
+<body>
+    <form name="commentForm">
+        <label for="comment">
+            Comment: <input id="comment" type="text" name="comment">
+        </label>
+            <br>
+            <label for="from">
+            From : <input id ="form" type="text" name="form">
+        </label>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="commentList"></div>
+    <script>
+        document.querySelector("form[name=commentForm]").onsubmit = function (event) {
+            event.preventDefault()
+            const commentList = document.getElementById("commentList")
+            const comment = document.getElementById("comment").value
+            const form = document.getElementById("form").value
+
+            const commentItem = document.createElement("p")
+            commentItem.textContent = `${comment} - ${form}`
+            commentList.appendChild(commentItem)
+
+            document.querySelector("form[name=commentForm]").reset()
+
+            // event.preventDefault()
+        }
+    </script>
+</body>
+</html>

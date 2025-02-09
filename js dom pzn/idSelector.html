@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector ID</title>
+</head>
+<body>
+    <ul>
+        <li class="menuItem">test 1</li>
+        <li id="menu2">test 2</li>
+        <li class="menuItem">test 3</li>
+    </ul>
+    <script>
+        const logo = document.querySelectorAll("#menu2")
+        logo.textContent = `halo`
+        console.info(logo)
+    </script>
+</body>
+</html>
