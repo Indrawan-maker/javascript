@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>Id:</td>
+                <td id="id"></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td id="name"></td>
+            </tr>
+                <tr>
+                    <td>Price:</td>
+                    <td id="price"></td>
+                </tr>
+        </tbody>
+    </table>
+    <script>
+        
+
+
+        // didalam parameter ini adalah nama file dari json
+        function getProduct(produk){
+            return new Promise(function(resolve,reject) {
+            const ajax = new XMLHttpRequest()
+            ajax.open("GET", `api/${produk}.json`)
+            ajax.onload = function(){
+                if(ajax.status === 200){
+                    resolve(ajax.responseText)
+                } else {
+                    reject(`ERROR Get Product By Response status: ${ajax.status}`)
+                }
+            }
+            ajax.send()
+
+
+        })
+        }
+
+        const promise =  Promise.all([
+            getProduct("produk"),
+            getProduct("produk1"),
+            getProduct("produk2"),
+            getProduct("produk3")
+        ])
+        
+        promise.then(function(products){
+            console.info(products)
+        })
+    
+    </script>
+</body>
+</html>

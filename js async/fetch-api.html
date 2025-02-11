@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FETCH - API</title>
+</head>
+<body>
+    <form>
+        <label for="username">
+            Username : 
+            <input type="text" id="username" name="username">
+        </label>
+        <br>
+        <label for="password">
+            Password : 
+            <input type="password" id="password" name="password">
+        </label>
+        <br>
+        <input type="button" id="login" value="login">
+    </form>
+    <h1 id="response"></h1>
+    <script>
+        function doLogin(){
+            const request = new Request("https://eoy980bdhsjph0f.m.pipedream.net/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                username: document.getElementById("username").value,
+                password: document.getElementById("password").value
+            })
+        })
+
+            // Promise{Response}
+        const response = fetch(request)
+        
+        response
+        .then(response => response.json())
+        .then(function(json){
+            document.getElementById("response").textContent = json.success
+        })
+        .cath(function(error){})
+        document.getElementById("response").textContent = error
+    }
+        document.getElementById("login").onclick = doLogin
+
+        // dibawah metode tanpa repot bikin response lagi di bwh sama saja di atas
+        // best practice nya adalah cara di ats agar mudah dibaca
+        // const response = fetch("https://eoy980bdhsjph0f.m.pipedream.net/", {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //         "Accept": "application/json"
+        //     },
+        //     body: JSON.stringify({
+        //         username: document.getElementById("username").value,
+        //         password: document.getElementById("password").value
+        //     })
+        // })
+    </script>
+</body>
+</html>
